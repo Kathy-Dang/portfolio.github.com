@@ -1,179 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>Your Name</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
-  <link rel="stylesheet" href="style.css">
+  <title>Portfolio</title>
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Icons -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   />
+
 </head>
 
 <body>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
+  <!-- NAVBAR -->
+  <header>
+
+    <nav>
+
+      <a href="index.html">Home</a>
+
+      <a href="projects.html">Projects</a>
+
+      <a href="research.html">Research</a>
+
+      <a href="awards.html">Awards</a>
+
+      <a href="cv.html">CV</a>
+
+    </nav>
+
+  </header>
+
+  <!-- HERO -->
+  <section class="hero reveal">
 
     <img
-      src="https://via.placeholder.com/180"
-      alt="profile"
-      class="profile-img"
+      src="profile.jpg"
+      alt="Profile Photo"
+      class="profile-photo"
     />
 
     <h1>Your Name</h1>
 
-    <p class="subtitle">
-      Software Engineer <br>
-      AI Researcher <br>
-      Web Developer
+    <h2>
+      Software Engineer • AI Researcher
+    </h2>
+
+    <p class="bio">
+      Passionate about machine learning,
+      intelligent systems, modern frontend
+      development, and impactful research.
     </p>
 
-    <button class="follow-btn">
-      Follow
-    </button>
+  </section>
 
-    <div class="info">
-      <p><i class="fas fa-university"></i> University Name</p>
+  <!-- ABOUT -->
+  <section class="content reveal">
 
-      <a href="#">
-        <i class="fab fa-linkedin"></i>
-        LinkedIn
-      </a>
+    <h3>About Me</h3>
 
-      <a href="#">
-        <i class="fab fa-github"></i>
-        GitHub
-      </a>
+    <p>
+      I design and develop modern digital
+      experiences with a strong focus on
+      scalable systems, human-centered AI,
+      and elegant interface engineering.
+    </p>
 
-      <a href="#">
-        <i class="fas fa-envelope"></i>
-        Email
-      </a>
+  </section>
+
+  <!-- FEATURED -->
+  <section class="content reveal">
+
+    <h3>Featured</h3>
+
+    <div class="featured-grid">
+
+      <div class="featured-card">
+
+        <h4>AI Research</h4>
+
+        <p>
+          Published work on explainable
+          machine learning systems.
+        </p>
+
+      </div>
+
+      <div class="featured-card">
+
+        <h4>Web Development</h4>
+
+        <p>
+          Built modern full-stack platforms
+          and responsive interfaces.
+        </p>
+
+      </div>
+
+      <div class="featured-card">
+
+        <h4>Hackathons</h4>
+
+        <p>
+          Award-winning solutions in
+          AI and software engineering.
+        </p>
+
+      </div>
+
     </div>
 
-  </aside>
+  </section>
 
-  <!-- MAIN CONTENT -->
-  <main class="content">
+  <!-- FOOTER -->
+  <footer>
 
-    <!-- NAV -->
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#research">Research</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <a href="https://linkedin.com">
+      <i class="fab fa-linkedin"></i>
+    </a>
 
-    <!-- ABOUT -->
-    <section id="about">
+    <a href="mailto:youremail@example.com">
+      <i class="fas fa-envelope"></i>
+    </a>
 
-      <h2>About Me</h2>
+  </footer>
 
-      <p>
-        I am a passionate developer focused on creating
-        modern web experiences and AI-powered applications.
-        My interests include machine learning, frontend
-        development, human-centered design, and scalable systems.
-      </p>
+  <!-- SCROLL REVEAL -->
+  <script>
 
-      <p>
-        Currently working on projects involving
-        full-stack development, intelligent systems,
-        and responsive UI engineering.
-      </p>
+    const reveals =
+      document.querySelectorAll(".reveal");
 
-    </section>
+    window.addEventListener("scroll", () => {
 
-    <!-- PROJECTS -->
-    <section id="projects">
+      reveals.forEach((element) => {
 
-      <h2>Projects</h2>
+        const top =
+          element.getBoundingClientRect().top;
 
-      <div class="project">
+        const visible = 100;
 
-        <h3>AI Portfolio Assistant</h3>
+        if(top < window.innerHeight - visible){
 
-        <p>
-          Built an AI chatbot for portfolio interaction
-          using React, Node.js, and OpenAI APIs.
-        </p>
+          element.classList.add("active");
 
-      </div>
+        }
 
-      <div class="project">
+      });
 
-        <h3>Modern Dashboard</h3>
+    });
 
-        <p>
-          Responsive admin dashboard with charts,
-          analytics, authentication, and animations.
-        </p>
-
-      </div>
-
-      <div class="project">
-
-        <h3>Research Visualizer</h3>
-
-        <p>
-          Data visualization platform for academic
-          research publications and statistics.
-        </p>
-
-      </div>
-
-    </section>
-
-    <!-- RESEARCH -->
-    <section id="research">
-
-      <h2>Research</h2>
-
-      <ul class="research-list">
-
-        <li>
-          Human-centered AI systems for healthcare
-        </li>
-
-        <li>
-          Machine learning explainability
-        </li>
-
-        <li>
-          Ethical data science and fairness
-        </li>
-
-      </ul>
-
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-
-      <h2>Contact</h2>
-
-      <p>
-        Feel free to reach out for collaborations,
-        freelance work, or research opportunities.
-      </p>
-
-      <a href="mailto:youremail@example.com" class="email-btn">
-        Contact Me
-      </a>
-
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-      © 2026 Your Name
-    </footer>
-
-  </main>
+  </script>
 
 </body>
+
 </html>
